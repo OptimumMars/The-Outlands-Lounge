@@ -57,6 +57,12 @@ export const logout = () => async (dispatch) => {
     return response;
 };
 
+export const userInfo = (id) => async (dispatch) => {
+
+    const response = await fetch(`/api/users/${id}`);
+    dispatch(setUser(response.data.user))
+}
+
 const initialState = { user: null };
 
 const sessionReducer = (state = initialState, action) => {
