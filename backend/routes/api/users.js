@@ -44,4 +44,10 @@ router.post(
     }),
 );
 
+// Get route for a user
+router.post('/:userId', asyncHandler(async (req, res) => {
+
+})
+);
+
 module.exports = router;

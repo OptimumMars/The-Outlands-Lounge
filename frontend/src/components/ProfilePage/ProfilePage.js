@@ -1,14 +1,17 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { userInfo } from "../../store/session";
+import { useParams } from 'react-router-dom';
+import { userInfo } from "../../store/profile";
 
 const ProfilePage = () => {
     const dispatch = useDispatch();
 
-    const user = useSelector(state => state.session.user);
+    const userId = Number.parseInt(useParams().userId);
+
+    const user = useSelector(state => state.profile);
 
     useEffect(() => {
-        dispatch(userInfo(user.id))
+        dispatch(userInfo(userId))
     }, [dispatch]);
 
     return (

@@ -1,3 +1,4 @@
+// import { useSelector } from 'react-redux';
 import { fetch } from './csrf';
 
 const SET_USER = 'session/setUser';
@@ -57,13 +58,12 @@ export const logout = () => async (dispatch) => {
     return response;
 };
 
-export const userInfo = (id) => async (dispatch) => {
-
-    const response = await fetch(`/api/users/${id}`);
-    dispatch(setUser(response.data.user))
-}
-
-const initialState = { user: null };
+const initialState = {
+    user: {
+        email: 'gabriel@email.com',
+        username: 'OptimumMars1',
+    }
+};
 
 const sessionReducer = (state = initialState, action) => {
     let newState;
