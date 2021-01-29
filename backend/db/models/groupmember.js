@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     UserId: DataTypes.INTEGER,
     GroupId: DataTypes.INTEGER
   }, {});
-  GroupMember.associate = function(models) {
+  GroupMember.associate = function (models) {
     // associations can be defined here
   };
   return GroupMember;

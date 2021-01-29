@@ -48,6 +48,13 @@ module.exports = (sequelize, DataTypes) => {
     });
   User.associate = function (models) {
     // associations can be defined here
+    User.belongsToMany(models.Group, {
+      through: "GroupMember",
+      otherKey: "GroupId",
+      foreignKey: "UserId",
+      as: "Groups",
+    });
+    User.hasOne(models.Legend, { foreignKey: 'UserId', as: "UserLegends" });
   };
 
   User.prototype.toSafeObject = function () { // remember, this cannot be an arrow function

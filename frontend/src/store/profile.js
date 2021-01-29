@@ -6,26 +6,31 @@ const initialState = {
     username: 'OptimumMars1',
 };
 
-const SET_USER = 'profile/setUser';
+const SET_PROFILE = 'profile/setProfile';
 
-const setUser = (user) => {
+const setProfile = (payload) => {
     return {
-        type: SET_USER,
-        payload: user,
+        type: SET_PROFILE,
+        payload,
     };
 };
 
 export const userInfo = (id) => async (dispatch) => {
+    console.log('thunk running')
 
     const response = await fetch(`/api/users/${id}`);
-    dispatch(setUser(response.data.user))
+
+    if (response.ok) {
+        console.log('response ok')
+        dispatch(setProfile(response.data))
+    }
 }
 
 const profileReducer = (state = initialState, action) => {
     let newState = Object.assign({}, state);
 
     switch (action.type) {
-        case SET_USER:
+        case SET_PROFILE:
             return action.payload;
 
         default:
