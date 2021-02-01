@@ -16,12 +16,12 @@ const setProfile = (payload) => {
 };
 
 export const userInfo = (id) => async (dispatch) => {
-    console.log('thunk running')
+    // console.log('thunk running')
 
     const response = await fetch(`/api/users/${id}`);
 
     if (response.ok) {
-        console.log('response ok')
+        // console.log('response ok')
         dispatch(setProfile(response.data))
     }
 }

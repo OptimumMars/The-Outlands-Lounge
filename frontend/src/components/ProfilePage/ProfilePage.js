@@ -25,7 +25,7 @@ const ProfilePage = () => {
 
     useEffect(() => {
         dispatch(userInfo(userId))
-        console.log('use effect running')
+        // console.log('use effect running')
     }, [dispatch, userId]);
 
     // const groupCheck = (jsx) => {

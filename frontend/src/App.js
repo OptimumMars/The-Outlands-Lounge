@@ -5,7 +5,8 @@ import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import ProfilePage from "./components/ProfilePage";
-import HomePage from "./components/HomePage"
+import HomePage from "./components/HomePage";
+import GroupPage from "./components/GroupPage";
 import * as sessionActions from "./store/session";
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/users/:userId">
             <ProfilePage />
+          </Route>
+          <Route path="/groups">
+            <GroupPage />
           </Route>
         </Switch>
       )}
