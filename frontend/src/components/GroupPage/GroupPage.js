@@ -21,7 +21,10 @@ const GroupPage = () => {
 
     return (
         <>
-            <h1>This is the Group Page</h1>
+            <h1>Group: {group.GroupName}</h1>
+            <>
+                <p>{group.GroupDescription}</p>
+            </>
         </>
     )
 }
